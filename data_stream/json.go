@@ -39,6 +39,13 @@ func jsonTransform() {
 	obj2 := make(map[string]interface{})
 	json.Unmarshal(mapStringInterfaceJson, &obj2)
 	fmt.Println(obj2)
+
+	mapmapObj := map[string]map[string]string{}
+	mapmapObj["id1"] = map[string]string{"key1": "value1", "key2": "value2"}
+	mapmapObj["id2"] = map[string]string{"key1": "value1", "key2": "value2"}
+	mapmapObjJson, _ := json.Marshal(mapmapObj)
+	fmt.Println(string(mapmapObjJson))
+
 }
 
 // json also allow io.writer as encoder
